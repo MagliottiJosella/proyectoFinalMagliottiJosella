@@ -1,0 +1,170 @@
+*{
+    margin: 0%;
+    padding: 0%;
+
+}
+
+body{
+    background: rgb(156, 139, 139);
+}
+
+.calendar{
+    background: rgb(233, 217, 217);
+    width: 70%;
+    max-width: 700px;
+    margin-left: 25%;
+    margin-top: 5%;
+    
+
+
+}
+
+.calendarInfo{
+    display: flex;
+    align-items: center;
+    margin-left:20%;
+    padding: 2%;
+    font-size:20px ;
+}
+
+#month{
+    padding:5%;
+    background: rgb(226, 179, 179);
+}
+
+
+#year{
+    padding:5%;
+    background: rgb(226, 179, 179);
+
+}
+
+#prevMonth{
+    color:rgb(196, 56, 56);
+    padding: 5%;
+    font-weight:900;
+    cursor: pointer;
+    font-size: 30px;
+ 
+}
+
+#nextMonth{
+    color:rgb(196, 56, 56);
+    padding: 5%;
+    font-weight:900;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.calendarWeek{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap:10px;
+}
+
+.calendarItem{
+    text-align: center;
+    line-height: 2;
+}
+
+#dates{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap:10px;
+    margin: 5%;
+   
+}
+
+.calendarToday{
+    background: #fff;
+    color:black;
+    width: 50%;
+    border-radius: 50%;
+    margin: auto;
+
+}
+
+
+.calendarLast{
+    color:black;
+    opacity: .4;
+}
+
+
+.diaseleccionado{
+    background: rgb(247, 117, 117);
+    border-radius: 50%;
+    color:black;
+    margin:auto;
+    
+}
+
+
+.timeSelection{
+
+    background: rgb(233, 217, 217);
+    width: 70%;
+    max-width: 700px;
+    margin-left: 25%;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+
+select {
+    background: transparent;
+    border:10;
+    font-size: 14px;
+    height: 30px;
+    margin:2%;
+    padding: 5px;
+    width: 250px;
+    font-size: 15px;
+    text-align: center;
+ }
+
+
+ #datosCliente{
+ 
+    background: rgb(233, 217, 217);
+    width: 70%;
+    max-width: 700px;
+    margin-left: 25%;
+    margin-top: 2%;
+    font-size: 18px;
+    text-align: center;
+
+ }
+
+ #reservar{
+    margin: 2%;
+    padding: 2%;
+    border-radius: 20%;
+    font-size: 15px;
+    font-weight: 900;
+    background: rgb(214, 139, 139);
+ }
+
+ #email{
+    background: rgb(226, 200, 200);
+    border-radius: 10%;
+    padding: 1%;
+    margin: 1%;
+
+ }
+
+ #nombreCliente{
+    background: rgb(226, 200, 200);
+    border-radius: 10%;
+    padding: 1%;
+    margin: 1%;
+ }
+ 
+#apellidoCliente{
+    background: rgb(226, 200, 200);
+    border-radius: 10%;
+    padding: 1%;
+    margin: 1%;
+
+}

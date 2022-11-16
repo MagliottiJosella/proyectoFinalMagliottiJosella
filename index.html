@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario trabajo final</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="turns">
+
+        <div class="calendar">
+
+            <div class="calendarInfo">
+                <div class="calendarPrev"  id="prevMonth"> &#10094; </div>
+                <div class="calendarMonth" id="month"></div>
+                <div class="calendarYear" id="year"></div>
+                <div class="calendarNext" id="nextMonth"> &#10095;</div>
+            </div>
+       
+    
+        <div class="calendarWeek">
+            <div class="calendarDay calendarItem">LUNES</div>
+            <div class="calendarDay calendarItem">MARTES</div>
+            <div class="calendarDay calendarItem">MIERCOLES</div>
+            <div class="calendarDay calendarItem">JUEVES</div>
+            <div class="calendarDay calendarItem">VIERNES</div>
+            <div class="calendarDay calendarItem">SABADO</div>
+            <div class="calendarDay calendarItem">DOMINGO</div>
+        </div>
+    
+        <div class="calendarDates" id="dates"></div>
+        </div>
+    
+        <div class="timeSelection">
+    
+            <label for="" id="selectionHours">Horarios disponibles</label>
+            <select name="" id="hours">
+                <option value="0">select</option>
+                <option value="10">10hs</option>
+                <option value="11">11hs</option>
+                <option value="12">12hs</option>
+                <option value="13">13hs</option>
+                <option value="15">15hs</option>
+                <option value="16">16hs</option>
+                <option value="17">17hs</option>
+                <option value="18">18hs</option>
+                <option value="19">19hs</option>
+            </select>
+
+        </div>
+
+        <form id="datosCliente">
+
+            <LAbel>ingrese sus datos</LAbel>  
+            <input type="text" name="" id="nombreCliente" placeholder="NOMBRE" required>
+            <input type="text" name="" id="apellidoCliente" placeholder="APELLIDO" required>
+            <input type="email" name="" id="email" placeholder="email" required>
+            
+            <button type="submit" id="reservar">reservar</button>
+    
+         </form>
+    
+
+    </div>
+
+
+
+
+
+
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
