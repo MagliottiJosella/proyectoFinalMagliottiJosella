@@ -158,21 +158,59 @@ botonreserva.addEventListener("click", (e) => {
     nombre=(document.getElementById("nombreCliente").value).toLowerCase()
     email=document.getElementById("email").value
     apellido=(document.getElementById("apellidoCliente").value).toLowerCase()
-    validarNombre() 
+
+
+    async function obtenerDatos(){
+
+        const response = await  fetch('https://jsonplaceholder.typicode.com/users')
+        const clientes = await response.json()
+    
+        yaTieneReserva(clientes, nombre)
+    
+      
+      }
+    
+      obtenerDatos()
+    
 }
 )
 
 
-// funcion para validar el nombre
-function validarNombre() {
+
+// AGREGADO DE FECHT PARA COMPARAR SI YA HABIA RESERVADO O ES UN NUEVO TURNO.     
     
-    if(nombre.trim() === "" || !isNaN(nombre)){
-    alert("No se ingreso el nombre");
-    validarNombre();
-    }
-    else{
-    return nombre;
-    }
-    }
+
+  function yaTieneReserva(clientes, nombre) {
+
+    const existe= clientes.some(elemento => elemento === nombre);
+
     
-    
+      if((!existe)||(nombre !== null))
+      { Swal.fire({
+        title: "TURNO RESERVADO",
+        /*text: (" dia :" + dia+ "/"+ (monthNumber+1)+"/"+(currentYear)+ " a la hora"+horario),*/
+        text: (" Gracias " + nombre + " te enviaremos un mail con los datos del turno al " +email),
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'confirmar'
+        }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Reservado',
+            'Cualquier consulta estamos a disposicion',
+            'success'
+          )
+        }
+        })
+                 
+      } else {
+        alert("nombre esta vacio")
+                 
+               
+                
+      }
+     } 
+     
+
