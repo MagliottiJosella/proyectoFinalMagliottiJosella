@@ -6,8 +6,6 @@ let diaSeleccionado
 let dia
 let horario
 let nombre
-let email
-let apellido
 let turnos=[]
 
 
@@ -156,54 +154,44 @@ const botonreserva=document.getElementById("reservar")
 botonreserva.addEventListener("click", (e) => {
     e.preventDefault()
 
-    nombre=(document.getElementById("nombreCliente").value).toLowerCase()
-    apellido=(document.getElementById("apellidoCliente").value).toLowerCase()
+    nombre=(document.getElementById("nombreCliente").value)  
 
-
-    async function obtenerDatos(){
+  async function obtenerDatos(){
 
         const response = await  fetch('https://jsonplaceholder.typicode.com/users')
         const clientes = await response.json()
-      
-        
-    
+ 
         yaTieneReserva(clientes, nombre)
-    
-      
       }
-    
-      obtenerDatos()
 
+      obtenerDatos()
 
       //objeto Turno con todos los datos obtenidos previamente
       turnos.push({
         clienteNombre:nombre,
-        clienteApellido:apellido,
-        horaturno:horario,
-        diaturno:dia,
+        horaTurno:horario,
+        diaTurno:dia,
+        mesTurno:(monthNumber+1),
+        anioTurno:currentYear,
       }
       )
       
-      localStorage.setItem("turnos", JSON.stringify(turnos))  // GUARDADO LOCAL DE LOS DATOS DE RESERVA
-
-    
-}
-)
+      localStorage.setItem("turnos", JSON.stringify(turnos))  // GUARDADO LOCAL DE LOS DATOS DE RESERVA   
+ }
+ )
 
 
 
 // AGREGADO DE FECHT PARA COMPARAR SI YA HABIA RESERVADO O ES UN NUEVO TURNO.     
     
 
-  function yaTieneReserva(clientes, nombre) {
+function yaTieneReserva(clientes, nombre) {
 
    
-    const existeNombre= clientes.some(elemento => elemento === nombre);
-    const existeApelido= clientes.some(elemento => elemento === apellido);
-    
+    const existeNombre= clientes.some(elemento => elemento.name === nombre);
 
     
-      if((!existeNombre)&&(nombre.trim() !== "")&&(!existeApelido)&&(apellido.trim() !== ""))
+    if((!existeNombre)&&(nombre.trim() !== ""))
       { Swal.fire({
         title: "TURNO RESERVADO",
         text: (" Gracias " + nombre + " la fecha reservada es :" + dia+ "/"+ (monthNumber+1)+"/"+(currentYear)+ " en el horario(hs) "+horario),
@@ -223,7 +211,7 @@ botonreserva.addEventListener("click", (e) => {
         })
    
    
-      } else if((existeNombre)&&(nombre.trim() !== "")&&(existeApelido)&&(apellido.trim() !== "")){
+      } else if((existeNombre)&&(nombre.trim() !== "")){
 
         Swal.fire({
           title: 'ya tienes un turno reservado. Deseas cambiarlo?',
@@ -266,7 +254,7 @@ botonreserva.addEventListener("click", (e) => {
           
         })
       }
-  }
+}
 
  
 
