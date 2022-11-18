@@ -151,18 +151,12 @@ hours.addEventListener("change",() => {
 const botonreserva=document.getElementById("reservar")
 
 
+
 botonreserva.addEventListener("click", (e) => {
-    e.preventDefault()
+       e.preventDefault()
 
-    nombre=(document.getElementById("nombreCliente").value)  
+      nombre=(document.getElementById("nombreCliente").value).toLowerCase()  
 
-  async function obtenerDatos(){
-
-        const response = await  fetch('https://jsonplaceholder.typicode.com/users')
-        const clientes = await response.json()
- 
-        yaTieneReserva(clientes, nombre)
-      }
 
       obtenerDatos()
 
@@ -177,18 +171,33 @@ botonreserva.addEventListener("click", (e) => {
       )
       
       localStorage.setItem("turnos", JSON.stringify(turnos))  // GUARDADO LOCAL DE LOS DATOS DE RESERVA   
+
+      limpiarForm() // limpiado del formulario
+
+
  }
  )
 
+ 
 
 
-// AGREGADO DE FECHT PARA COMPARAR SI YA HABIA RESERVADO O ES UN NUEVO TURNO.     
+  
+// Funciones del formulario   
+
+async function obtenerDatos(){
+
+  const response = await  fetch('https://jsonplaceholder.typicode.com/users')
+  const clientes = await response.json()
+
+  yaTieneReserva(clientes, nombre)
+  }
+
     
 
 function yaTieneReserva(clientes, nombre) {
 
    
-    const existeNombre= clientes.some(elemento => elemento.name === nombre);
+  const existeNombre= clientes.some(elemento => elemento.name.toLowerCase() === nombre);
 
     
     if((!existeNombre)&&(nombre.trim() !== ""))
@@ -254,6 +263,15 @@ function yaTieneReserva(clientes, nombre) {
           
         })
       }
+}
+
+
+function limpiarForm(){
+
+  const limpiarFormulario=document.getElementById("datosCliente")
+  limpiarFormulario.reset()
+
+ 
 }
 
  

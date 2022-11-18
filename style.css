@@ -5,11 +5,11 @@
 }
 
 body{
-    background: rgb(156, 139, 139);
+    background: rgba(156, 139, 139, 0.447);
 }
 
 .calendar{
-    background: rgb(233, 217, 217);
+    background: rgb(143, 140, 140);
     width: 70%;
     max-width: 700px;
     margin-left: 25%;
@@ -29,18 +29,21 @@ body{
 
 #month{
     padding:5%;
-    background: rgb(226, 179, 179);
+    background:rgba(15, 13, 15, 0.948);
+    color:#fff;
 }
 
 
 #year{
     padding:5%;
-    background: rgb(226, 179, 179);
-
+    background:  rgba(15, 13, 15, 0.948);
+    color:#fff;
 }
 
+
+
 #prevMonth{
-    color:rgb(196, 56, 56);
+    color:rgb(65, 65, 65);
     padding: 5%;
     font-weight:900;
     cursor: pointer;
@@ -49,7 +52,7 @@ body{
 }
 
 #nextMonth{
-    color:rgb(196, 56, 56);
+    color:rgb(65, 65, 65);
     padding: 5%;
     font-weight:900;
     cursor: pointer;
@@ -92,7 +95,7 @@ body{
 
 
 .diaseleccionado{
-    background: rgb(247, 117, 117);
+    background: rgb(129, 46, 46);
     border-radius: 50%;
     color:black;
     margin:auto;
@@ -102,7 +105,7 @@ body{
 
 .timeSelection{
 
-    background: rgb(233, 217, 217);
+    background: rgb(143, 140, 140);
     width: 70%;
     max-width: 700px;
     margin-left: 25%;
@@ -127,13 +130,14 @@ select {
 
  #datosCliente{
  
-    background: rgb(233, 217, 217);
+    background: rgb(143, 140, 140);
     width: 70%;
     max-width: 700px;
     margin-left: 25%;
     margin-top: 2%;
     font-size: 18px;
     text-align: center;
+    margin-bottom: 5%;
 
  }
 
@@ -146,38 +150,42 @@ select {
     background: rgb(214, 139, 139);
  }
 
- #email{
-    background: rgb(226, 200, 200);
-    border-radius: 10%;
-    padding: 1%;
-    margin: 1%;
 
- }
 
  #nombreCliente{
-    background: rgb(226, 200, 200);
+    background: rgb(189, 184, 184);
     border-radius: 10%;
+    width: 350px;
     padding: 1%;
     margin: 1%;
  }
  
-#apellidoCliente{
-    background: rgb(226, 200, 200);
-    border-radius: 10%;
-    padding: 1%;
-    margin: 1%;
 
-}
 
 
 #reservar{
     border: 1px solid #2e518b; /*anchura, estilo y color borde*/
  padding: 10px; /*espacio alrededor texto*/
- background-color: #7e3d6c; /*color botón*/
+ background-color: #565556; /*color botón*/
  color: #ffffff; /*color texto*/
  text-decoration: none; /*decoración texto*/
  text-transform: uppercase; /*capitalización texto*/
  font-family: 'Helvetica', sans-serif; /*tipografía texto*/
  border-radius: 50px; /*bordes redondos*/
       
+}
+
+
+h1{
+    font-size: 40px;
+    margin-left: 600px;
+    margin-top: 50px;
+}
+
+h3{
+
+    font-size: 20px;
+    margin-left: 600px;
+    margin-top: 20px;
+
 }
